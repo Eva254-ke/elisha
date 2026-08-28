@@ -4,7 +4,7 @@
    1. LAYOUT & CONTAINER
    ========================================= */
 .hero {
-  padding-block: clamp(4rem, 8vh, 6rem);
+  padding-block: clamp(3rem, 6vh, 4.5rem);
   background-color: var(--color-cream);
   overflow: hidden;
   position: relative;
@@ -13,7 +13,7 @@
 .hero-container {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
   max-width: var(--container-max);
   margin-inline: auto;
@@ -31,7 +31,8 @@
 @media (max-width: 767px) {
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
+    padding-inline: 1rem;
   }
   .hero-media {
     order: 1;
@@ -125,11 +126,20 @@
 .hero-image {
   width: 100%;
   height: auto;
-  aspect-ratio: 4/5;
+  aspect-ratio: 1/1;
   object-fit: cover;
-  border-radius: 4px;
-  box-shadow: 0 20px 40px rgba(27, 42, 78, 0.15);
+  border-radius: 50%;
+  box-shadow: 0 10px 20px rgba(27, 42, 78, 0.15);
   transition: transform 0.5s var(--ease-premium);
+  max-width: 220px;
+}
+
+@media (min-width: 768px) {
+  .hero-image {
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    max-width: none;
+  }
 }
 
 .hero-media:hover .hero-image {
