@@ -101,15 +101,14 @@
    4. ACTIONS
    ========================================= */
 .book-actions {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  flex-wrap: wrap;
 }
 
 @media (max-width: 480px) {
   .book-actions {
-    flex-direction: column;
-    width: 100%;
+    grid-template-columns: 1fr 1fr;
   }
   .book-actions .btn {
     width: 100%;

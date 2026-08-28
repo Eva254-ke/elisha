@@ -70,6 +70,18 @@
   }
 }
 
+@media (max-width: 767px) {
+  .footer-main {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .footer-brand,
+  .footer-connect,
+  .footer-services {
+    grid-column: span 1;
+  }
+}
+
 /* =========================================
    4. BRAND & NAVIGATION (Left)
    ========================================= */

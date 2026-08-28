@@ -24,6 +24,20 @@
   .hero-container {
     grid-template-columns: 1.1fr 1fr;
     gap: 5rem;
+    align-items: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .hero-media {
+    order: 1;
+  }
+  .hero-content {
+    order: 2;
   }
 }
 
