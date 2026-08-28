@@ -1,0 +1,44 @@
+---
+// src/components/BookShowcase.astro
+import '../styles/book-showcase.css';
+---
+
+<section class="book-showcase section-padding" aria-labelledby="book-title">
+  <div class="container">
+    
+    <div class="book-grid">
+      
+      <div class="book-visual reveal">
+        <div class="book-cover-wrapper">
+          <img 
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBisyBuiqcw1wWGGMwyjo8jEQSHQeZW38YtKrSakE-gKwPXgUo6EqMlVYyhW6cojsbP7uRp2GLnv7hCpxl3B30neAQol7y-bT10R-GxfTQEjPh1cJiaBkhWUYBFWExryEnh9I0MezMwAP7vX05cBHIcln5HebDa9CUtYL9G9YxlALykJbmFHfHwoskVW_jZxbQlhKaMqkbwelua0rY9vyqD2DrQEtdD-1ufrQVwK93_Y1-QWlvVtnsV" 
+            alt="Prodigal Son, Patient Father Book Cover" 
+            width="600" 
+            height="900"
+            loading="lazy"
+            class="book-cover"
+          />
+        </div>
+      </div>
+
+      <div class="book-content reveal-children">
+        <p class="book-meta">Theology & Spiritual Growth</p>
+        <h2 id="book-title" class="book-title">Prodigal Son, <br /><span class="text-gold">Patient Father</span></h2>
+        <p class="book-author">By Dr. Peter Muriithi Elisha</p>
+        
+        <p class="book-description reveal">
+          A profound exploration of grace, redemption, and the enduring nature of divine love. This seminal work unpacks the beloved parable through a fresh, culturally rich theological lens.
+        </p>
+
+        <div class="book-actions reveal">
+          <a href="https://www.amazon.com/dp/ProdigalSonPatientFather" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span class="material-symbols-outlined mr-2" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+            Order on Amazon
+          </a>
+          <a href="#" class="btn btn-secondary">Read Free Chapter</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

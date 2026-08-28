@@ -1,0 +1,185 @@
+/* src/styles/support.css */
+
+/* =========================================
+   1. SECTION LAYOUT
+   ========================================= */
+.support {
+  background-color: var(--color-white);
+  position: relative;
+}
+
+.support::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, 
+    var(--color-cream) 0%, 
+    var(--color-gold) 50%, 
+    var(--color-cream) 100%
+  );
+}
+
+.support-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .support-wrapper {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4rem;
+  }
+}
+
+/* =========================================
+   2. CONTENT (Left Side)
+   ========================================= */
+.support-content {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .support-content {
+    text-align: left;
+  }
+}
+
+.support-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 1.25rem;
+  line-height: 1.2;
+}
+
+.support-text {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--color-warmgray);
+  margin-bottom: 2.5rem;
+}
+
+.support-verse {
+  background-color: var(--color-cream);
+  border-left: 3px solid var(--color-gold);
+  padding: 1.5rem 1.75rem;
+  border-radius: 2px;
+  position: relative;
+}
+
+.verse-text {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--color-charcoal);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.verse-ref {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   3. KO-FI INTEGRATION (Right Side)
+   ========================================= */
+.support-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.kofi-container {
+  width: 100%;
+  max-width: 320px;
+  position: relative;
+}
+
+#kofi-widget {
+  z-index: 999 !important;
+}
+
+.kofi-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.4s var(--ease-premium);
+  box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+  border: 2px solid var(--color-gold);
+  width: 100%;
+  justify-content: center;
+}
+
+.kofi-button:hover {
+  background-color: transparent;
+  color: var(--color-gold);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(201, 169, 97, 0.4);
+}
+
+.kofi-button svg {
+  transition: transform 0.3s ease;
+}
+
+.kofi-button:hover svg {
+  transform: translateY(-2px);
+}
+
+.kofi-note {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--color-warmgray);
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kofi-note svg {
+  color: var(--color-gold);
+}
+
+/* =========================================
+   4. MOBILE OPTIMIZATIONS
+   ========================================= */
+@media (max-width: 480px) {
+  .support-verse {
+    padding: 1.25rem;
+  }
+  
+  .verse-text {
+    font-size: 1rem;
+  }
+}
+
+/* =========================================
+   5. KO-FI WIDGET STYLES (Advanced)
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  .kofi-note svg {
+    transform: none;
+  }
+}

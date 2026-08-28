@@ -1,0 +1,199 @@
+/* src/styles/ministry.css */
+
+/* =========================================
+   1. SECTION LAYOUT
+   ========================================= */
+.ministry {
+  background-color: var(--color-white);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+/* =========================================
+   2. THE GRID (Mobile First)
+   ========================================= */
+.ministry-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+
+/* =========================================
+   3. BASE ITEM STYLING
+   ========================================= */
+.ministry-item {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-sand);
+  transition: background-color 0.4s var(--ease-premium);
+}
+
+.ministry-item:hover {
+  background-color: rgba(27, 42, 78, 0.02);
+}
+
+.ministry-item:first-child {
+  padding-top: 0;
+}
+
+.ministry-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ministry-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 0.5rem;
+}
+
+.ministry-location {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-gold);
+  font-style: normal;
+  margin-bottom: 1.25rem;
+}
+
+.ministry-desc {
+  font-family: var(--font-sans);
+  color: var(--color-warmgray);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.ministry-link {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-navy);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  align-self: flex-start;
+  transition: color 0.3s ease, gap 0.3s ease;
+}
+
+.ministry-link:hover {
+  color: var(--color-gold);
+  gap: 1rem;
+}
+
+.ministry-link svg {
+  transition: transform 0.3s var(--ease-premium);
+}
+
+.ministry-link:hover svg {
+  transform: translateX(5px);
+}
+
+/* =========================================
+   4. FEATURED ITEM (SPM)
+   ========================================= */
+.ministry-featured {
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  padding: 2.5rem;
+  border-radius: 2px;
+  border-bottom: none;
+  margin-inline: -1.5rem;
+  padding-inline: 1.5rem;
+}
+
+.ministry-featured .ministry-title {
+  color: var(--color-cream);
+}
+
+.ministry-featured .ministry-location {
+  color: var(--color-gold);
+}
+
+.ministry-featured .ministry-desc {
+  color: rgba(250, 247, 242, 0.8);
+}
+
+.ministry-featured .ministry-link {
+  color: var(--color-cream);
+}
+
+.ministry-featured .ministry-link:hover {
+  color: var(--color-gold);
+}
+
+/* The Notice Box */
+.spm-notice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(201, 169, 97, 0.15);
+  border: 1px solid var(--color-gold);
+  padding: 1rem 1.25rem;
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.notice-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-gold);
+  font-weight: 600;
+}
+
+.notice-date {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-cream);
+}
+
+.ministry-cta {
+  width: 100%;
+  text-align: center;
+}
+
+/* =========================================
+   5. DESKTOP BREAKPOINT (Vertical Dividers)
+   ========================================= */
+@media (min-width: 768px) {
+  .ministry-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .ministry-item {
+    border-bottom: none;
+    padding: 0 2rem;
+    border-right: 1px solid var(--color-sand);
+  }
+
+  .ministry-item:first-child {
+    padding-left: 0;
+  }
+
+  .ministry-item:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .ministry-featured {
+    margin-inline: 0;
+    padding: 2.5rem 2rem;
+    border-right: none;
+  }
+}

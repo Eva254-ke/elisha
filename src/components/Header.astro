@@ -1,0 +1,70 @@
+---
+// src/components/Header.astro
+import '../styles/header.css';
+---
+
+<header class="site-header" id="site-header" aria-label="Main Navigation">
+  <div class="container header-container">
+    
+    <!-- Logo -->
+    <a href="/" class="logo-link">
+      <span class="logo-text">Dr. P. M. Elisha</span>
+    </a>
+
+    <!-- Mobile Toggle Button -->
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+      <span class="hamburger-line"></span>
+    </button>
+
+    <!-- Navigation Menu -->
+    <nav class="main-nav" id="main-nav">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#ministry" class="nav-link">Ministry</a></li>
+        <li class="nav-item"><a href="#books" class="nav-link">Books</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link nav-cta">Connect</a></li>
+      </ul>
+    </nav>
+
+  </div>
+</header>
+
+<!-- Minimal Vanilla JS for Interaction -->
+<script>
+  const header = document.getElementById('site-header');
+  const toggle = document.getElementById('nav-toggle');
+  const nav = document.getElementById('main-nav');
+
+  if (!header || !toggle || !nav) throw new Error('Header elements not found');
+
+  // 1. Scroll Effect: Add 'scrolled' class when user scrolls down
+  const handleScroll = () => {
+    if (window.scrollY > 20) {
+      header.classList.add('is-scrolled');
+    } else {
+      header.classList.remove('is-scrolled');
+    }
+  };
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // 2. Mobile Menu Toggle
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.contains('is-open');
+    nav.classList.toggle('is-open');
+    toggle.classList.toggle('is-active');
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    document.body.style.overflow = isOpen ? '' : 'hidden';
+  });
+
+  // 3. Close menu when a link is clicked
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      toggle.classList.remove('is-active');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+</script>

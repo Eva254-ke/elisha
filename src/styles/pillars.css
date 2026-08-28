@@ -1,0 +1,115 @@
+/* src/styles/pillars.css */
+
+/* =========================================
+   1. SECTION LAYOUT
+   ========================================= */
+.pillars {
+  background-color: var(--color-white);
+  position: relative;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+/* =========================================
+   2. THE GRID (Mobile First)
+   ========================================= */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+}
+
+.pillar-item {
+  padding-block: 2.5rem;
+  border-bottom: 1px solid var(--color-sand);
+  position: relative;
+  transition: background-color 0.4s var(--ease-premium);
+}
+
+.pillar-item:hover {
+  background-color: rgba(201, 169, 97, 0.03);
+}
+
+.pillar-item:first-child {
+  padding-top: 0;
+}
+
+.pillar-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+/* =========================================
+   3. TYPOGRAPHY & CONTENT
+   ========================================= */
+.pillar-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin-bottom: 1rem;
+}
+
+.pillar-desc {
+  font-family: var(--font-sans);
+  color: var(--color-warmgray);
+  line-height: 1.7;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  max-width: 350px;
+}
+
+.pillar-link {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-navy);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: color 0.3s ease, gap 0.3s ease;
+}
+
+.pillar-link:hover {
+  color: var(--color-gold);
+  gap: 1rem;
+}
+
+.pillar-link svg {
+  transition: transform 0.3s var(--ease-premium);
+}
+
+.pillar-link:hover svg {
+  transform: translateX(5px);
+}
+
+/* =========================================
+   4. DESKTOP BREAKPOINT (Vertical Separators)
+   ========================================= */
+@media (min-width: 768px) {
+  .pillars-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+  }
+
+  .pillar-item {
+    border-bottom: none;
+    padding: 0 2.5rem;
+    border-right: 1px solid var(--color-sand);
+  }
+
+  .pillar-item:first-child {
+    padding-left: 0;
+  }
+
+  .pillar-item:last-child {
+    border-right: none;
+    padding-right: 0;
+  }
+}

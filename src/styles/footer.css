@@ -1,0 +1,287 @@
+/* src/styles/footer.css */
+
+/* =========================================
+   1. FOOTER BASE
+   ========================================= */
+.site-footer {
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+/* =========================================
+   2. DEVOTIONAL SIGNATURE (Top)
+   ========================================= */
+.footer-signature {
+  text-align: center;
+  padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  margin-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid rgba(250, 247, 242, 0.1);
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.signature-text {
+  font-family: var(--font-script);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+  color: var(--color-gold);
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.signature-ref {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: rgba(250, 247, 242, 0.6);
+}
+
+/* =========================================
+   3. FOOTER MAIN (Middle Section)
+   ========================================= */
+.footer-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-bottom: clamp(2rem, 3vw, 3rem);
+  border-bottom: 1px solid rgba(250, 247, 242, 0.1);
+}
+
+@media (min-width: 768px) {
+  .footer-main {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+/* =========================================
+   4. BRAND & NAVIGATION (Left)
+   ========================================= */
+.footer-logo {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-cream);
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-logo:hover {
+  color: var(--color-gold);
+}
+
+.footer-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: rgba(250, 247, 242, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.footer-link {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-cream);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  transition: width 0.4s var(--ease-premium);
+}
+
+.footer-link:hover {
+  color: var(--color-gold);
+}
+
+.footer-link:hover::after {
+  width: 100%;
+}
+
+/* =========================================
+   5. CONNECT & SOCIAL (Right)
+   ========================================= */
+.footer-heading {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-gold);
+  margin-bottom: 1.25rem;
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-cream);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  transition: color 0.3s ease, transform 0.3s var(--ease-premium);
+}
+
+.footer-social-link:hover {
+  color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.footer-social-link svg {
+  transition: transform 0.3s ease;
+}
+
+.footer-social-link:hover svg {
+  transform: translateY(-2px);
+}
+
+.footer-location {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: rgba(250, 247, 242, 0.6);
+}
+
+.footer-location svg {
+  color: var(--color-gold);
+}
+
+/* =========================================
+   5a. SERVICES (Vertical List)
+   ========================================= */
+.footer-services {
+  margin-top: 2rem;
+}
+
+.footer-services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-service-link {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--color-cream);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-service-link:hover {
+  color: var(--color-gold);
+}
+
+/* =========================================
+   6. FOOTER BOTTOM
+   ========================================= */
+.footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.copyright {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: rgba(250, 247, 242, 0.5);
+  margin: 0;
+}
+
+.back-to-top {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--color-gold);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: gap 0.3s ease;
+}
+
+.back-to-top:hover {
+  gap: 0.75rem;
+}
+
+.back-to-top svg {
+  transition: transform 0.3s var(--ease-premium);
+}
+
+.back-to-top:hover svg {
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   7. MOBILE OPTIMIZATIONS
+   ========================================= */
+@media (max-width: 480px) {
+  .footer-nav-list {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .footer-social-link {
+    font-size: 0.8rem;
+  }
+}
