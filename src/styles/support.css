@@ -8,6 +8,7 @@
   position: relative;
 }
 
+/* Subtle top accent line */
 .support::before {
   content: '';
   position: absolute;
@@ -110,6 +111,7 @@
   position: relative;
 }
 
+/* Ensure Ko-fi widget stays on top */
 #kofi-widget {
   z-index: 999 !important;
 }
@@ -117,6 +119,7 @@
 .kofi-button {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   background-color: var(--color-gold);
   color: var(--color-navy);
@@ -130,14 +133,7 @@
   box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
   border: 2px solid var(--color-gold);
   width: 100%;
-  justify-content: center;
-}
-
-@media (max-width: 480px) {
-  .kofi-button {
-    padding: 0.6rem 1.25rem;
-    font-size: 0.85rem;
-  }
+  max-width: 280px;
 }
 
 .kofi-button:hover {
@@ -164,13 +160,16 @@
   text-align: center;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
+  max-width: 280px;
 }
 
 .kofi-note svg {
   width: 12px;
   height: 12px;
   color: var(--color-gold);
+  flex-shrink: 0;
 }
 
 /* =========================================
@@ -184,13 +183,20 @@
   .verse-text {
     font-size: 1rem;
   }
+
+  .kofi-button {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* =========================================
-   5. KO-FI WIDGET STYLES (Advanced)
+   5. ACCESSIBILITY (Reduced Motion)
    ========================================= */
 @media (prefers-reduced-motion: reduce) {
-  .kofi-note svg {
+  .kofi-button,
+  .kofi-button svg {
+    transition: none;
     transform: none;
   }
 }
