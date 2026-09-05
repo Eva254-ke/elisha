@@ -1,0 +1,176 @@
+---
+// src/components/VideoGallery.astro
+import '../styles/video-gallery.css';
+---
+
+<section class="video-gallery section-padding" aria-labelledby="video-title">
+  <div class="container">
+    
+    <!-- Header -->
+    <header class="section-header reveal">
+      <h2 id="video-title" class="section-title">Media &amp; Teachings</h2>
+      <div class="divider divider-gold"></div>
+      <p class="section-subtitle">Watch sermons, SPM classes, and conference teachings</p>
+    </header>
+
+    <!-- Video Grid -->
+    <div class="video-grid">
+      
+      <!-- Video 1: Walking in Prophetic Authority -->
+      <div class="video-card reveal">
+        <div class="video-wrapper">
+          <div class="video-thumb">
+            <img 
+              src="https://img.youtube.com/vi/tAvJRVgcVrw/maxresdefault.jpg" 
+              alt="Sermon: Walking in Prophetic Authority" 
+              loading="lazy"
+              class="video-image"
+            />
+            <div class="video-overlay">
+              <button class="play-btn" aria-label="Play video: Walking in Prophetic Authority">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+            </div>
+            <span class="duration-badge">45:20</span>
+          </div>
+          <div class="video-info">
+            <span class="category-badge">Sermon</span>
+            <h3 class="video-title">Walking in Prophetic Authority</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 2: Foundations of Prophetic Ministry -->
+      <div class="video-card reveal">
+        <div class="video-wrapper">
+          <div class="video-thumb">
+            <img 
+              src="https://img.youtube.com/vi/DGUVdiY3mUk/maxresdefault.jpg" 
+              alt="SPM Class: Foundations of Prophetic Ministry" 
+              loading="lazy"
+              class="video-image"
+            />
+            <div class="video-overlay">
+              <button class="play-btn" aria-label="Play video: Foundations of Prophetic Ministry">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+            </div>
+            <span class="duration-badge">1:20:00</span>
+          </div>
+          <div class="video-info">
+            <span class="category-badge">SPM Class</span>
+            <h3 class="video-title">Foundations of Prophetic Ministry</h3>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video 3: Kingdom Leadership Summit -->
+      <div class="video-card reveal">
+        <div class="video-wrapper">
+          <div class="video-thumb">
+            <img 
+              src="https://img.youtube.com/vi/qcSdbzAbJDQ/maxresdefault.jpg" 
+              alt="Conference: Kingdom Leadership Summit 2025" 
+              loading="lazy"
+              class="video-image"
+            />
+            <div class="video-overlay">
+              <button class="play-btn" aria-label="Play video: Kingdom Leadership Summit 2025">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </button>
+            </div>
+            <span class="duration-badge">55:00</span>
+          </div>
+          <div class="video-info">
+            <span class="category-badge">Conference</span>
+            <h3 class="video-title">Kingdom Leadership Summit 2025</h3>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- View All Button -->
+    <div class="view-all-section reveal">
+      <a href="https://www.facebook.com/peter.elisha.1/reels/" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
+        View All Videos
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- Video Modal -->
+<div class="video-modal" id="videoModal" aria-hidden="true">
+  <div class="modal-overlay" role="button" tabindex="0" aria-label="Close video modal"></div>
+  <div class="modal-content">
+    <button class="modal-close" aria-label="Close video">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="40" height="40">
+        <path d="M18 6L6 18M6 6l12 12" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </button>
+    <div class="video-container">
+      <iframe 
+        id="youtubePlayer" 
+        src="" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+<!-- Video Modal Script -->
+<script>
+  const videoModal = document.getElementById('videoModal');
+  const youtubePlayer = document.getElementById('youtubePlayer');
+  const playBtns = document.querySelectorAll('.play-btn');
+  const modalClose = document.querySelector('.modal-close');
+  const modalOverlay = document.querySelector('.modal-overlay');
+
+  playBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const videoCard = btn.closest('.video-card');
+      const videoTitle = videoCard.querySelector('.video-title').textContent;
+      
+      // Extract video ID from thumbnail URL (simplified - in production, use actual YouTube IDs)
+      // For demo purposes, we'll use placeholder IDs
+      const videoIds = {
+        'Walking in Prophetic Authority': 'tAvJRVgcVrw',
+        'Foundations of Prophetic Ministry': 'DGUVdiY3mUk',
+        'Kingdom Leadership Summit 2025': 'qcSdbzAbJDQ'
+      };
+      
+      const videoId = videoIds[videoTitle] || 'tAvJRVgcVrw';
+      
+      youtubePlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      videoModal.classList.add('active');
+      videoModal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  const closeVideoModal = () => {
+    videoModal.classList.remove('active');
+    videoModal.setAttribute('aria-hidden', 'true');
+    youtubePlayer.src = '';
+    document.body.style.overflow = '';
+  };
+
+  modalClose.addEventListener('click', closeVideoModal);
+  modalOverlay.addEventListener('click', closeVideoModal);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+      closeVideoModal();
+    }
+  });
+</script>

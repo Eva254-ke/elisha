@@ -48,7 +48,7 @@
    ========================================= */
 .pillar-title {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: clamp(1.5rem, 3vw, 1.75rem);
   font-weight: 600;
   color: var(--color-navy);
   margin-bottom: 1rem;
@@ -60,7 +60,18 @@
   line-height: 1.7;
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
-  max-width: 350px;
+  max-width: 100%; /* Allows text to flow naturally on mobile */
+}
+
+@media (min-width: 768px) {
+  .pillar-desc {
+    max-width: 350px; /* Constrain width on desktop for readability */
+  }
+}
+
+.pillar-desc em {
+  color: var(--color-charcoal);
+  font-style: italic;
 }
 
 .pillar-link {

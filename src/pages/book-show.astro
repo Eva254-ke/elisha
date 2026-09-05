@@ -1,0 +1,147 @@
+---
+// src/pages/book-show.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/book-show.css';
+---
+
+<BaseLayout 
+  title="Book Show - Dr. Peter Muriithi Elisha"
+  description="Explore all books by Dr. Peter Muriithi Elisha"
+>
+  <Header />
+  <main>
+    <section class="book-show section-padding">
+      <div class="container">
+        <h1 class="page-title">All Books</h1>
+        <p class="page-subtitle">Explore Dr. Peter Muriithi Elisha's published works</p>
+        
+        <div class="books-grid">
+          
+          <!-- Prodigal Son, Patient Father -->
+          <div class="book-card">
+            <div class="book-cover-wrapper">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBisyBuiqcw1wWGGMwyjo8jEQSHQeZW38YtKrSakE-gKwPXgUo6EqMlVYyhW6cojsbP7uRp2GLnv7hCpxl3B30neAQol7y-bT10R-GxfTQEjPh1cJiaBkhWUYBFWExryEnh9I0MezMwAP7vX05cBHIcln5HebDa9CUtYL9G9YxlALykJbmFHfHwoskVW_jZxbQlhKaMqkbwelua0rY9vyqD2DrQEtdD-1ufrQVwK93_Y1-QWlvVtnsV" 
+                alt="Prodigal Son, Patient Father Book Cover" 
+                width="300" 
+                height="450"
+                loading="lazy"
+                class="book-cover"
+              />
+            </div>
+            <div class="book-info">
+              <p class="book-meta">Theology & Spiritual Growth</p>
+              <h3 class="book-title">Prodigal Son, <br /><span class="text-gold">Patient Father</span></h3>
+              <p class="book-author">By Dr. Peter Muriithi Elisha</p>
+              <p class="book-description">
+                A profound exploration of grace, redemption, and the enduring nature of divine love. This seminal work unpacks the beloved parable through a fresh, culturally rich theological lens.
+              </p>
+              <div class="book-actions">
+                <a href="https://www.amazon.com/dp/ProdigalSonPatientFather" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  Order on Amazon
+                </a>
+                <a href="#" class="btn btn-secondary">Read Free Chapter</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hearing the Voice of God -->
+          <div class="book-card">
+            <div class="book-cover-wrapper">
+              <img 
+                src="https://i.ibb.co/0jyYj1n0/image.png" 
+                alt="Hearing the Voice of God Book Cover" 
+                width="300" 
+                height="450"
+                loading="lazy"
+                class="book-cover"
+              />
+            </div>
+            <div class="book-info">
+              <p class="book-meta">Practical Christianity</p>
+              <h3 class="book-title">Hearing the Voice of God</h3>
+              <p class="book-author">By Dr. Peter Muriithi Elisha</p>
+              <p class="book-description">
+                A practical guide to discerning divine direction in everyday life. Learn to recognize God's guidance through prayer, Scripture, and the Holy Spirit.
+              </p>
+              <a href="https://wa.me/254723103042" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Details</a>
+            </div>
+          </div>
+
+          <!-- Marriage Works Today -->
+          <div class="book-card">
+            <div class="book-cover-wrapper">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa9BOIl7EPqI4-FdEky6xcvRlzdfcopkxi-V1aVq5P00cSEq5is-PLHeuZqfpDfMgvglxpLKbW2H5UIR6WaTb6-e1_gj4-k0mTE7JtsJY5Cb1-gxg8ITjUuJ8x2u8MlUc7Uln8b3DUvvuqYRl8vVxdyy_LbHjWqRVtgq2dmb-pGwsZJN80K5v4kdH3hebgpAJgJGygACYIFRPw-GHXJcvu3IlxysaqkeJo_Ynqn-M_Vq0gQFRVGZMjIBwxeROlvzavVw" 
+                alt="Marriage Works Today Book Cover" 
+                width="300" 
+                height="450"
+                loading="lazy"
+                class="book-cover"
+              />
+            </div>
+            <div class="book-info">
+              <p class="book-meta">Marriage & Family</p>
+              <h3 class="book-title">Marriage Works Today</h3>
+              <p class="book-author">By Peter &amp; Asnath Muriithi</p>
+              <p class="book-description">
+                Biblical principles for building a strong, lasting, and joyful marriage in the modern world. Practical advice for couples at every stage.
+              </p>
+              <a href="https://wa.me/254723103042" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Details</a>
+            </div>
+          </div>
+
+          <!-- Unveiling the Deception -->
+          <div class="book-card">
+            <div class="book-cover-wrapper">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7pNfltiHtWcS5hm27eVLKy37WN4-mZ0AkfCF3T9Jge4uvUb5SQn00hY490Dl2ZbgnQ1JebKq451goIxVTHUNDwQMDwSjOdf2H64watRD3rq6HMtwM6H3VRsiAtwNbdg1u3vC4t8ogy_Dbk_Lsw042C3EgjynuRYNb3rEZLu8WYS65Fpmxe1Xv6i3n31WTMEHSxQ9nfSTlDBqB3yt_7NGCij_qI2OeRAFInmhcj7IrzUnGT5W7LoxyvTIwO85p27eVdQ" 
+                alt="Unveiling the Deception Book Cover" 
+                width="300" 
+                height="450"
+                loading="lazy"
+                class="book-cover"
+              />
+            </div>
+            <div class="book-info">
+              <p class="book-meta">Spiritual Warfare</p>
+              <h3 class="book-title">Unveiling the Deception</h3>
+              <p class="book-author">By Dr. Peter Muriithi Elisha</p>
+              <p class="book-description">
+                Understanding and overcoming spiritual deception in the modern age. A wake-up call for believers to stand firm in truth.
+              </p>
+              <a href="https://wa.me/254723103042" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Details</a>
+            </div>
+          </div>
+
+          <!-- Responding to the Call -->
+          <div class="book-card">
+            <div class="book-cover-wrapper">
+              <img 
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjPka8j1kUScTx-7-gdXw-zUaL8jmSEqwtzXY0XJ0UwIJT5CeyRbdLvmzmoVNjtPwuY-cZpZUI167cbiq8jik77YdXtFxjLletT3pShjI8Vz4yDQ___NQB8RTRubN9xVT3-mymWkETh5bvY3NeeUWJXCEERDa2N_AaFLjwYnmDo92GPrihAGdQoFSoXDuLVjGhtaFTUuRRYYri1knnAvGa5fQdCoDSgVRPh-9wlBaeeAA4PMAb5M98PtORxQzW85-3cg" 
+                alt="Responding to the Call Book Cover" 
+                width="300" 
+                height="450"
+                loading="lazy"
+                class="book-cover"
+              />
+            </div>
+            <div class="book-info">
+              <p class="book-meta">Vocation & Purpose</p>
+              <h3 class="book-title">Responding to the Call</h3>
+              <p class="book-author">By Dr. Peter Muriithi Elisha</p>
+              <p class="book-description">
+                Navigating your divine purpose and stepping into your God-given destiny. Discover how to hear and answer God's call.
+              </p>
+              <a href="#" class="btn btn-secondary">View Details</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

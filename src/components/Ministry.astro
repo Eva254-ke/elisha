@@ -1,6 +1,7 @@
 ---
 // src/components/Ministry.astro
 import '../styles/ministry.css';
+import SPMPhotoGallery from '../components/SPMPhotoGallery.astro';
 ---
 
 <section class="ministry section-padding" aria-labelledby="ministry-title">
@@ -12,51 +13,108 @@ import '../styles/ministry.css';
       <p class="section-subtitle">Equipping believers and scholars for the work of the Kingdom.</p>
     </header>
 
-    <div class="ministry-grid">
-      
-      <article class="ministry-item reveal">
-        <h3 class="ministry-title">Good News Family Church</h3>
-        <address class="ministry-location">Kahawa Wendani, Nairobi</address>
-        <p class="ministry-desc">
-          A vibrant community dedicated to teaching, preaching, and training believers in the Word of God. Join us every Sunday for transformative worship and fellowship.
-        </p>
-        <a href="#" class="ministry-link">
-          <span>Service Times & Location</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16">
-            <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </a>
-      </article>
-
-      <article class="ministry-item ministry-featured reveal">
-        <h3 class="ministry-title">Prophetic School of Ministry</h3>
-        <address class="ministry-location">Ruiru, Kenya</address>
-        <p class="ministry-desc">
-          Equipping the next generation of prophetic voices and church leaders. Our rigorous curriculum blends biblical theology with practical ministry skills.
-        </p>
+    <!-- Royal Family Church Section -->
+    <div class="ministry-section reveal">
+      <div class="ministry-content">
+        <h3 class="ministry-title">Royal Family Church - Thika</h3>
         
+        <p class="vision-statement">
+          <strong>Vision:</strong> Building people for kingdom influence
+        </p>
+
+        <div class="four-rs">
+          <h4 class="rs-title">We:</h4>
+          <ul class="rs-list">
+            <li><span class="rs-letter">R</span>eceive</li>
+            <li><span class="rs-letter">R</span>efresh</li>
+            <li><span class="rs-letter">R</span>esource</li>
+            <li><span class="rs-letter">R</span>elease</li>
+          </ul>
+        </div>
+
+        <div class="service-times">
+          <span class="time-label">Service Times:</span>
+          <span class="time-value">8:30 AM & 10:30 AM</span>
+        </div>
+
+        <p class="ministry-desc">
+          A vibrant community dedicated to teaching, preaching, and training believers in the Word of God. 
+          Join us every Sunday for transformative worship and fellowship.
+        </p>
+      </div>
+    </div>
+
+    <!-- What We Offer Section -->
+    <div class="ministry-section reveal">
+      <h3 class="section-subtitle-alt">What We Offer</h3>
+      <div class="offerings-grid">
+        <div class="offering-item">
+          <h4>Leadership Training</h4>
+        </div>
+        <div class="offering-item">
+          <h4>Prophetic Ministry Training</h4>
+        </div>
+        <div class="offering-item">
+          <h4>Theological Education</h4>
+        </div>
+        <div class="offering-item">
+          <h4>Counseling & Mentorship</h4>
+        </div>
+        <div class="offering-item">
+          <h4>Conference Speaker</h4>
+        </div>
+        <div class="offering-item">
+          <h4>Author</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPM Section -->
+    <div class="ministry-section reveal">
+      <div class="spm-section">
+        <h3 class="spm-title">School of Prophetic Ministry (S.P.M)</h3>
+        
+        <p class="spm-tagline">"Raising & Equipping a prophetic generation"</p>
+        
+        <p class="ministry-desc">
+          Offering both physical and virtual classes to equip the next generation of prophetic voices 
+          and church leaders. Our rigorous curriculum blends biblical theology with practical ministry skills.
+        </p>
+
         <div class="spm-notice">
-          <span class="notice-label">Next Intake</span>
-          <span class="notice-date">January 2027</span>
+          <span class="notice-label">Intake</span>
+          <span class="notice-date">Every January</span>
+        </div>
+
+        <div class="spm-contact">
+          <a href="mailto:schoolofpropheticministry@gmail.com">schoolofpropheticministry@gmail.com</a>
         </div>
 
         <a href="#" class="btn btn-primary ministry-cta">Apply for SPM</a>
-      </article>
-
-      <article class="ministry-item reveal">
-        <h3 class="ministry-title">Academic Mentorship</h3>
-        <address class="ministry-location">University Lecture Halls</address>
-        <p class="ministry-desc">
-          Bridging the gap between faith and reason. Passionate about mentoring university students, fostering critical thinking, and developing ethical future leaders.
-        </p>
-        <a href="#" class="ministry-link">
-          <span>Teaching Philosophy</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" width="16" height="16">
-            <path d="M5 12h14M12 5l7 7-7 7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-        </a>
-      </article>
-
+      </div>
     </div>
+
+    <!-- SPM Photo Gallery -->
+    <SPMPhotoGallery />
+
+    <!-- Ministries Under Dr. Elisha -->
+    <div class="ministry-section reveal">
+      <h3 class="section-subtitle-alt">Ministries under Dr. P.M. Elisha</h3>
+      <div class="ministries-list">
+        <div class="ministry-org">
+          <h4>Prophetic Foundations International</h4>
+          <p>A network of apostolic & prophetic leaders</p>
+        </div>
+        <div class="ministry-org">
+          <h4>Good News Community Education Centre</h4>
+          <p>Training & equipping through education</p>
+        </div>
+        <div class="ministry-org">
+          <h4>Trumpet Publications</h4>
+          <p>Publishing company for Christian resources</p>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>

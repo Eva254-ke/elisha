@@ -1,199 +1,367 @@
 /* src/styles/ministry.css */
 
 /* =========================================
-   1. SECTION LAYOUT
+   1. SECTION LAYOUT - Clean Engineering Design
    ========================================= */
 .ministry {
-  background-color: var(--color-white);
+  background-color: #ffffff;
+  padding-top: clamp(4rem, 8vw, 6rem);
+  padding-bottom: clamp(4rem, 8vw, 6rem);
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: clamp(3rem, 5vw, 5rem);
+  margin-bottom: clamp(3rem, 6vw, 5rem);
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--color-navy);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.divider {
+  width: 80px;
+  height: 3px;
+  background-color: var(--color-gold);
+  margin: 0 auto 1.5rem;
+}
+
+.section-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--color-warmgray);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* =========================================
-   2. THE GRID (Mobile First)
+   2. MINISTRY CONTENT - No Cards
    ========================================= */
-.ministry-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-}
-
-/* =========================================
-   3. BASE ITEM STYLING
-   ========================================= */
-.ministry-item {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem 0;
-  border-bottom: 1px solid var(--color-sand);
-  transition: background-color 0.4s var(--ease-premium);
-}
-
-.ministry-item:hover {
-  background-color: rgba(27, 42, 78, 0.02);
-}
-
-.ministry-item:first-child {
-  padding-top: 0;
-}
-
-.ministry-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
+.ministry-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
 }
 
 .ministry-title {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
-  font-weight: 600;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
   color: var(--color-navy);
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
-.ministry-location {
+.vision-statement {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-charcoal);
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e8e8e8;
+  line-height: 1.6;
+}
+
+.vision-statement strong {
+  color: var(--color-navy);
+  font-weight: 600;
+}
+
+.four-rs {
+  margin-bottom: 2.5rem;
+}
+
+.rs-title {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--color-warmgray);
+  margin-bottom: 1.5rem;
+}
+
+.rs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.rs-list li {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.rs-list li:hover {
+  background-color: #f0f0f0;
+  transform: translateX(5px);
+}
+
+.rs-letter {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  line-height: 1;
+  min-width: 40px;
+}
+
+.service-times {
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  padding: 1.25rem 2rem;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.time-label {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  color: var(--color-gold);
-  font-style: normal;
-  margin-bottom: 1.25rem;
+  opacity: 0.8;
+}
+
+.time-value {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-cream);
 }
 
 .ministry-desc {
   font-family: var(--font-sans);
-  color: var(--color-warmgray);
+  color: var(--color-charcoal);
   line-height: 1.7;
-  font-size: 0.95rem;
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
-}
-
-.ministry-link {
-  font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  color: var(--color-navy);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  align-self: flex-start;
-  transition: color 0.3s ease, gap 0.3s ease;
-}
-
-.ministry-link:hover {
-  color: var(--color-gold);
-  gap: 1rem;
-}
-
-.ministry-link svg {
-  transition: transform 0.3s var(--ease-premium);
-}
-
-.ministry-link:hover svg {
-  transform: translateX(5px);
+  font-size: 1rem;
 }
 
 /* =========================================
-   4. FEATURED ITEM (SPM)
+   3. OFFERINGS GRID - Clean Engineering Style
    ========================================= */
-.ministry-featured {
-  background-color: var(--color-navy);
-  color: var(--color-cream);
-  padding: 2.5rem;
-  border-radius: 2px;
-  border-bottom: none;
-  margin-inline: -1.5rem;
-  padding-inline: 1.5rem;
+.offerings-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.ministry-featured .ministry-title {
-  color: var(--color-cream);
+.offering-item {
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid #e8e8e8;
 }
 
-.ministry-featured .ministry-location {
+.offering-item:hover {
+  transform: translateY(-5px);
+  border-bottom-color: var(--color-gold);
+}
+
+.offering-item h4 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-navy);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+@media (min-width: 768px) {
+  .offerings-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* =========================================
+   4. SPM SECTION - Featured Design
+   ========================================= */
+.spm-section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+  text-align: center;
+}
+
+.spm-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  color: var(--color-navy);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.spm-tagline {
+  font-family: var(--font-script);
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
   color: var(--color-gold);
+  margin-bottom: 2rem;
+  font-style: italic;
+  opacity: 0.95;
 }
 
-.ministry-featured .ministry-desc {
-  color: rgba(250, 247, 242, 0.8);
-}
-
-.ministry-featured .ministry-link {
-  color: var(--color-cream);
-}
-
-.ministry-featured .ministry-link:hover {
-  color: var(--color-gold);
-}
-
-/* The Notice Box */
 .spm-notice {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(201, 169, 97, 0.15);
-  border: 1px solid var(--color-gold);
-  padding: 1rem 1.25rem;
-  border-radius: 2px;
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
   margin-bottom: 1.5rem;
 }
 
 .notice-label {
   font-family: var(--font-sans);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--color-gold);
+  letter-spacing: 1.5px;
   font-weight: 600;
 }
 
 .notice-date {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--color-cream);
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  font-weight: 600;
+}
+
+.spm-contact {
+  margin-bottom: 2rem;
+}
+
+.spm-contact a {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-navy);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-gold);
+  transition: color 0.3s ease;
+}
+
+.spm-contact a:hover {
+  color: var(--color-gold);
 }
 
 .ministry-cta {
-  width: 100%;
-  text-align: center;
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: var(--color-navy);
+  color: var(--color-cream);
+  text-decoration: none;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.ministry-cta:hover {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+  transform: translateY(-2px);
 }
 
 /* =========================================
-   5. DESKTOP BREAKPOINT (Vertical Dividers)
+   5. MINISTRIES LIST
+   ========================================= */
+.ministries-list {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.ministry-org {
+  padding: 1.5rem 2rem;
+  border-left: 3px solid var(--color-gold);
+  transition: all 0.3s ease;
+}
+
+.ministry-org:hover {
+  background-color: #f8f9fa;
+  transform: translateX(10px);
+  border-left-color: var(--color-navy);
+}
+
+.ministry-org h4 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--color-navy);
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.ministry-org p {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--color-warmgray);
+  margin: 0;
+}
+
+/* =========================================
+   6. MOBILE OPTIMIZATIONS
+   ========================================= */
+@media (max-width: 767px) {
+  .ministry-content {
+    padding: 0 1rem;
+  }
+  
+  .rs-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .offerings-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-times {
+    padding: 1rem;
+  }
+  
+  .ministries-list {
+    gap: 1rem;
+  }
+}
+
+/* =========================================
+   7. DESKTOP OPTIMIZATIONS
    ========================================= */
 @media (min-width: 768px) {
-  .ministry-grid {
+  .ministries-list {
     grid-template-columns: repeat(3, 1fr);
-    gap: 0;
   }
-
-  .ministry-item {
-    border-bottom: none;
-    padding: 0 2rem;
-    border-right: 1px solid var(--color-sand);
-  }
-
-  .ministry-item:first-child {
-    padding-left: 0;
-  }
-
-  .ministry-item:last-child {
-    border-right: none;
-    padding-right: 0;
-  }
-
-  .ministry-featured {
-    margin-inline: 0;
-    padding: 2.5rem 2rem;
-    border-right: none;
+  
+  .service-times {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 }
