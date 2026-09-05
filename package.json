@@ -11,11 +11,11 @@
     "preview": "astro preview",
     "astro": "astro"
   },
-  "dependencies": {
-    "@astrojs/cloudflare": "^13.7.0",
-    "astro": "^6.4.8"
-  },
   "allowScripts": {
     "esbuild": true
+  },
+  "dependencies": {
+    "@astrojs/cloudflare": "^14.3.0",
+    "astro": "^5.18.2"
   }
 }
