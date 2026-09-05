@@ -284,8 +284,18 @@
 }
 
 @media (max-width: 600px) {
+  .video-gallery {
+    padding-block: 2.75rem 3rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.75rem;
+  }
+
   .video-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
   }
   
   .modal-content {

@@ -175,11 +175,25 @@
 /* =========================================
    4. MOBILE OPTIMIZATIONS
    ========================================= */
-@media (max-width: 480px) {
+@media (max-width: 767px) {
+  .support {
+    padding-block: 2.75rem 3rem;
+  }
+
+  .support-wrapper {
+    gap: 2rem;
+  }
+
+  .support-text {
+    margin-bottom: 1.75rem;
+  }
+
   .support-verse {
     padding: 1.25rem;
   }
-  
+}
+
+@media (max-width: 480px) {
   .verse-text {
     font-size: 1rem;
   }

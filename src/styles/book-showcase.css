@@ -7,6 +7,33 @@
   background-color: var(--color-cream);
 }
 
+@media (max-width: 767px) {
+  .book-showcase {
+    padding-block: 2rem;
+  }
+
+  .book-grid {
+    gap: 2rem;
+  }
+
+  .more-works-section {
+    margin-top: 0.5rem;
+  }
+
+  .more-works-section .divider {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .more-works-subtitle {
+    margin-bottom: 1.5rem;
+  }
+
+  .show-more-section {
+    margin-top: 1.5rem;
+  }
+}
+
 .book-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -106,16 +133,22 @@
   gap: 1rem;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 767px) {
   .book-actions {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
   }
+
   .book-actions .btn {
     width: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-inline: 0.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
   }
 }
 
@@ -123,7 +156,7 @@
    5. MORE PUBLISHED WORKS (Clean, No Emojis)
    ========================================= */
 .more-works-section {
-  margin-top: clamp(4rem, 8vw, 6rem);
+  margin-top: clamp(2.75rem, 8vw, 6rem);
   text-align: center;
 }
 

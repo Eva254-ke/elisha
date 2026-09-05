@@ -268,8 +268,18 @@
 }
 
 @media (max-width: 600px) {
+  .spm-photo-gallery {
+    padding-block: 2.75rem 3rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.75rem;
+  }
+
   .photo-grid {
     grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.75rem;
   }
   
   .lightbox-content {

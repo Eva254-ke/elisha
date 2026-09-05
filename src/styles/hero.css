@@ -29,17 +29,22 @@
 }
 
 @media (max-width: 767px) {
+  .hero {
+    padding-block: 2.25rem 0.75rem;
+  }
+
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
     padding-inline: 1.25rem;
   }
-  .hero-media {
-    order: 1; /* Image first on mobile */
-  }
   .hero-content {
-    order: 2; /* Text second on mobile */
+    order: 1;
     text-align: center;
+  }
+
+  .hero-media {
+    order: 2;
   }
 }
 
@@ -84,12 +89,6 @@
   margin-bottom: 2.5rem;
 }
 
-@media (max-width: 767px) {
-  .hero-description {
-    margin-inline: auto;
-  }
-}
-
 /* =========================================
    3. BUTTONS
    ========================================= */
@@ -103,6 +102,29 @@
 @media (min-width: 768px) {
   .hero-actions {
     justify-content: flex-start;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero-description {
+    margin-inline: auto;
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    width: 100%;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    padding-inline: 0.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    text-align: center;
   }
 }
 
@@ -128,9 +150,10 @@
 
 @media (max-width: 767px) {
   .hero-image {
-    aspect-ratio: 3/4;
-    border-radius: 8px; /* Slight rounding looks more modern on mobile */
-    transform: rotate(-1deg) scale(1.02);
+    width: min(100%, 18rem);
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+    transform: none;
   }
 }
 

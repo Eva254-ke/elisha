@@ -69,6 +69,20 @@
   }
 }
 
+@media (max-width: 767px) {
+  .pillars {
+    padding-block: 0.75rem 2.25rem;
+  }
+
+  .section-header {
+    margin-bottom: 1.75rem;
+  }
+
+  .pillar-item {
+    padding-block: 1.75rem;
+  }
+}
+
 .pillar-desc em {
   color: var(--color-charcoal);
   font-style: italic;
