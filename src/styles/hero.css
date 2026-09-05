@@ -30,12 +30,12 @@
 
 @media (max-width: 767px) {
   .hero {
-    padding: 4.25rem 0 0.75rem;
+    padding: 4.25rem 0 0;
   }
 
   .hero-container {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 1.25rem;
     padding-inline: 1.25rem;
   }
   .hero-content {
@@ -151,7 +151,8 @@
 @media (max-width: 767px) {
   .hero-image {
     width: min(100%, 18rem);
-    aspect-ratio: 4/5;
+    aspect-ratio: 5/6;
+    object-position: center top;
     border-radius: 10px;
     transform: none;
   }
