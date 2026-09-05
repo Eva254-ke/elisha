@@ -195,16 +195,16 @@
 .book-card {
   background-color: var(--color-white);
   border: 1px solid var(--color-sand);
-  border-radius: 8px;
+  border-radius: var(--radius-soft);
   overflow: hidden;
-  transition: all 0.4s var(--ease-premium);
+  transition: transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium), border-color 0.4s var(--ease-premium);
   display: flex;
   flex-direction: column;
 }
 
 .book-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(27, 42, 78, 0.12);
+  box-shadow: var(--shadow-soft);
   border-color: var(--color-gold);
 }
 

@@ -9,10 +9,11 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.92);
   -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(27, 42, 78, 0.08);
+  border-bottom: 1px solid rgba(38, 54, 84, 0.08);
+  box-shadow: 0 2px 14px rgba(38, 54, 84, 0.04);
   transition: all 0.4s var(--ease-premium);
 }
 
@@ -40,7 +41,7 @@
   font-weight: 700;
   color: var(--color-navy);
   text-decoration: none;
-  letter-spacing: -0.5px;
+  letter-spacing: 0;
   z-index: 1001;
 }
 
