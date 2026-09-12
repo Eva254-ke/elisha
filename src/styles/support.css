@@ -123,12 +123,12 @@
   gap: 0.5rem;
   background-color: var(--color-gold);
   color: var(--color-navy);
-  padding: 0.75rem 1.5rem;
+  padding: 0.85rem 1.5rem;
   border-radius: 6px;
   text-decoration: none;
   font-family: var(--font-sans);
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   transition: all 0.4s var(--ease-premium);
   box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
   border: 2px solid var(--color-gold);
@@ -173,34 +173,46 @@
 }
 
 /* =========================================
-   4. MOBILE OPTIMIZATIONS
+   4. MOBILE OPTIMIZATIONS (Apple-Inspired)
    ========================================= */
 @media (max-width: 767px) {
   .support {
-    padding-block: 2.75rem 3rem;
+    padding-block: 2.5rem 2rem;
   }
 
   .support-wrapper {
-    gap: 2rem;
+    gap: 1.5rem;
   }
 
   .support-text {
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
   }
 
   .support-verse {
     padding: 1.25rem;
   }
+
+  .kofi-button {
+    width: 100%;
+    max-width: none;
+    padding: 0.85rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .kofi-note {
+    max-width: none;
+    font-size: 0.7rem;
+  }
 }
 
 @media (max-width: 480px) {
   .verse-text {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .kofi-button {
-    padding: 0.6rem 1.25rem;
-    font-size: 0.85rem;
+    padding: 0.9rem 1.5rem;
   }
 }
 

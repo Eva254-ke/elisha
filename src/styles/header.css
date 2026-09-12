@@ -160,7 +160,7 @@
   letter-spacing: 1.5px;
   background-color: var(--color-gold);
   color: var(--color-navy);
-  padding: 0.6rem 1.5rem;
+  padding: 0.85rem 1.5rem;
   border-radius: 2px;
   border: 2px solid var(--color-gold);
   margin-top: 0.75rem;
@@ -227,7 +227,7 @@
 
   .nav-cta {
     font-size: 0.65rem;
-    padding: 0.6rem 1.5rem;
+    padding: 0.85rem 1.5rem;
     margin-top: 0;
     background-color: var(--color-navy);
     color: var(--color-white);

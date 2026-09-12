@@ -102,16 +102,6 @@
   .pillar-item:nth-child(even) .pillar-link {
     justify-content: flex-end;
   }
-
-  .pillar-item:nth-child(odd) .pillar-link span::after {
-    content: "→";
-    margin-left: 0.5rem;
-  }
-
-  .pillar-item:nth-child(even) .pillar-link span::after {
-    content: "←";
-    margin-right: 0.5rem;
-  }
 }
 
 .pillar-desc em {

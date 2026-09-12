@@ -1,7 +1,7 @@
 /* src/styles/ministry.css */
 
 /* =========================================
-   1. SECTION LAYOUT - Clean Engineering Design
+   1. SECTION LAYOUT - Apple-Inspired Clean Design
    ========================================= */
 .ministry {
   background-color: #ffffff;
@@ -40,7 +40,7 @@
 }
 
 /* =========================================
-   2. MINISTRY CONTENT - No Cards
+   2. MINISTRY CONTENT - No Cards, Clean Layout
    ========================================= */
 .ministry-content {
   max-width: 800px;
@@ -62,8 +62,8 @@
   font-size: 1.15rem;
   color: var(--color-charcoal);
   margin-bottom: 2.5rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #e8e8e8;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   line-height: 1.6;
 }
 
@@ -126,7 +126,7 @@
   background-color: var(--color-navy);
   color: var(--color-cream);
   padding: 1.25rem 2rem;
-  border-radius: 4px;
+  border-radius: var(--radius-soft);
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
@@ -157,7 +157,7 @@
 }
 
 /* =========================================
-   3. OFFERINGS GRID - Clean Engineering Style
+   3. OFFERINGS GRID - Clean, No Borders
    ========================================= */
 .offerings-grid {
   display: grid;
@@ -171,12 +171,14 @@
   padding: 2rem 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
-  border-bottom: 2px solid #e8e8e8;
+  background-color: #fafafa;
+  border-radius: var(--radius-soft);
 }
 
 .offering-item:hover {
   transform: translateY(-5px);
-  border-bottom-color: var(--color-gold);
+  background-color: #f8f9fa;
+  box-shadow: var(--shadow-soft);
 }
 
 .offering-item h4 {
@@ -203,7 +205,7 @@
   padding: 3rem 2rem;
   background-color: #f8f8f6;
   border-radius: var(--radius-soft);
-  border: 1px solid #e8e8e8;
+  border: 1px solid rgba(0, 0, 0, 0.05);
   text-align: center;
 }
 
@@ -232,7 +234,7 @@
   background-color: var(--color-navy);
   color: var(--color-cream);
   padding: 1rem 1.5rem;
-  border-radius: 4px;
+  border-radius: var(--radius-soft);
   margin-bottom: 1.5rem;
 }
 
@@ -278,7 +280,7 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  border-radius: 4px;
+  border-radius: var(--radius-soft);
   transition: all 0.3s ease;
 }
 
@@ -286,10 +288,11 @@
   background-color: var(--color-gold);
   color: var(--color-navy);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-soft);
 }
 
 /* =========================================
-   5. MINISTRIES LIST
+   5. MINISTRIES LIST - Clean, No Borders
    ========================================= */
 .ministries-list {
   display: grid;
@@ -300,14 +303,15 @@
 
 .ministry-org {
   padding: 1.5rem 2rem;
-  border-left: 3px solid var(--color-gold);
+  background-color: #fafafa;
+  border-radius: var(--radius-soft);
   transition: all 0.3s ease;
 }
 
 .ministry-org:hover {
   background-color: #f8f9fa;
   transform: translateX(10px);
-  border-left-color: var(--color-navy);
+  box-shadow: var(--shadow-soft);
 }
 
 .ministry-org h4 {
@@ -331,7 +335,7 @@
    ========================================= */
 @media (max-width: 767px) {
   .ministry {
-    padding-block: 2.75rem 3rem;
+    padding-block: 2.5rem 2rem;
   }
 
   .section-header {
@@ -348,8 +352,8 @@
   }
   
   .offerings-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
   
   .service-times {

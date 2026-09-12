@@ -176,6 +176,12 @@
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .hero-image {
+    transition: none;
+  }
+}
+
 .hero-media:hover .hero-image {
   transform: scale(1.02);
 }
