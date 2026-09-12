@@ -60,15 +60,18 @@
   line-height: 1.7;
   font-size: 0.95rem;
   margin-bottom: 1.5rem;
-  max-width: 100%; /* Allows text to flow naturally on mobile */
+  max-width: 100%;
 }
 
 @media (min-width: 768px) {
   .pillar-desc {
-    max-width: 350px; /* Constrain width on desktop for readability */
+    max-width: 350px;
   }
 }
 
+/* =========================================
+   4. MOBILE ALTERNATING LAYOUT (Apple-Inspired)
+   ========================================= */
 @media (max-width: 767px) {
   .pillars {
     padding-block: 0.75rem 2.25rem;
@@ -80,6 +83,34 @@
 
   .pillar-item {
     padding-block: 1.75rem;
+    padding-inline: 1.5rem;
+  }
+
+  /* Alternate content alignment for visual rhythm */
+  .pillar-item:nth-child(odd) .pillar-desc {
+    text-align: left;
+  }
+
+  .pillar-item:nth-child(even) .pillar-desc {
+    text-align: right;
+  }
+
+  .pillar-item:nth-child(odd) .pillar-link {
+    justify-content: flex-start;
+  }
+
+  .pillar-item:nth-child(even) .pillar-link {
+    justify-content: flex-end;
+  }
+
+  .pillar-item:nth-child(odd) .pillar-link span::after {
+    content: "→";
+    margin-left: 0.5rem;
+  }
+
+  .pillar-item:nth-child(even) .pillar-link span::after {
+    content: "←";
+    margin-right: 0.5rem;
   }
 }
 
@@ -99,24 +130,15 @@
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
-  transition: color 0.3s ease, gap 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .pillar-link:hover {
   color: var(--color-gold);
-  gap: 1rem;
-}
-
-.pillar-link svg {
-  transition: transform 0.3s var(--ease-premium);
-}
-
-.pillar-link:hover svg {
-  transform: translateX(5px);
 }
 
 /* =========================================
-   4. DESKTOP BREAKPOINT (Vertical Separators)
+   5. DESKTOP BREAKPOINT (Vertical Separators)
    ========================================= */
 @media (min-width: 768px) {
   .pillars-grid {
