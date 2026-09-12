@@ -61,7 +61,7 @@
   position: relative;
   max-width: 300px;
   width: 100%;
-  transition: transform 0.6s var(--ease-premium);
+  transition: transform 360ms var(--spring-soft);
   transform: rotateY(-5deg) rotateX(2deg);
 }
 
@@ -77,7 +77,7 @@
   box-shadow: 
     -15px 15px 30px rgba(27, 42, 78, 0.15),
     -2px 0 5px rgba(0, 0, 0, 0.1) inset;
-  transition: box-shadow 0.6s var(--ease-premium);
+  transition: box-shadow 220ms ease;
 }
 
 .book-cover-wrapper:hover .book-cover {
@@ -197,7 +197,10 @@
   border: 1px solid var(--color-sand);
   border-radius: var(--radius-soft);
   overflow: hidden;
-  transition: transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium), border-color 0.4s var(--ease-premium);
+  transition:
+    transform 260ms var(--spring-soft),
+    box-shadow 220ms ease,
+    border-color 180ms ease;
   display: flex;
   flex-direction: column;
 }
@@ -219,11 +222,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.6s var(--ease-premium);
+  transition: transform 360ms var(--spring-soft);
 }
 
 .book-card:hover .book-cover {
   transform: scale(1.05);
+}
+
+.book-card:active {
+  transform: translateY(-2px) scale(0.995);
 }
 
 .book-info {

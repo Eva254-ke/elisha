@@ -35,10 +35,14 @@ import '../styles/hero.css';
     <div class="hero-media reveal">
       <img 
         src="https://i.ibb.co/0p1q5Xnq/image.png" 
+        srcset="https://i.ibb.co/0p1q5Xnq/image.png 800w, https://i.ibb.co/0p1q5Xnq/image.png 400w"
         alt="Dr. Peter Muriithi Elisha Portrait" 
         width="800" 
         height="1000"
         loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        sizes="(max-width: 480px) 90vw, (max-width: 767px) 95vw, 550px"
         class="hero-image"
       />
     </div>

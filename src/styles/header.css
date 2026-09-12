@@ -14,7 +14,10 @@
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(38, 54, 84, 0.08);
   box-shadow: 0 2px 14px rgba(38, 54, 84, 0.04);
-  transition: all 0.4s var(--ease-premium);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .site-header.is-scrolled {
@@ -64,6 +67,13 @@
   cursor: pointer;
   z-index: 1001;
   padding: 0;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 160ms var(--spring-press);
+}
+
+.nav-toggle:active {
+  transform: scale(0.94);
 }
 
 .hamburger-line {
@@ -98,12 +108,13 @@
   right: 0;
   width: 100%;
   height: 100vh;
+  height: 100dvh;
   background-color: var(--color-white);
   display: flex;
   align-items: center;
   justify-content: center;
   transform: translateX(100%);
-  transition: transform 0.5s var(--ease-premium);
+  transition: transform 360ms var(--spring-soft);
   box-shadow: -10px 0 30px rgba(0,0,0,0.08);
 }
 
@@ -129,6 +140,11 @@
   text-decoration: none;
   position: relative;
   transition: color 0.3s ease;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1rem;
 }
 
 .nav-link:hover {
@@ -148,13 +164,32 @@
   border-radius: 2px;
   border: 2px solid var(--color-gold);
   margin-top: 0.75rem;
-  transition: all 0.4s var(--ease-premium);
+  transition:
+    transform 220ms var(--spring-soft),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
 }
 
 .nav-cta:hover {
   background-color: transparent;
   color: var(--color-gold);
   transform: translateY(-2px);
+}
+
+.nav-link:active,
+.nav-cta:active {
+  transform: scale(0.97);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .site-header {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid var(--color-sand);
+    box-shadow: none;
+  }
 }
 
 /* =========================================

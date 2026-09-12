@@ -15,6 +15,8 @@
   --font-script: 'Dancing Script', cursive;
 
   --ease-premium: cubic-bezier(0.16, 1, 0.3, 1);
+  --spring-soft: cubic-bezier(0.18, 0.89, 0.32, 1.14);
+  --spring-press: cubic-bezier(0.34, 1.56, 0.64, 1);
   --shadow-soft: 0 10px 30px rgba(38, 54, 84, 0.08);
   --radius-soft: 6px;
   
@@ -39,7 +41,7 @@ body {
 }
 
 img { max-width: 100%; height: auto; display: block; }
-a { text-decoration: none; color: inherit; transition: color 0.3s var(--ease-premium); }
+a { text-decoration: none; color: inherit; transition: color 180ms var(--ease-premium); }
 
 .container {
   width: 100%;
@@ -89,9 +91,16 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; }
   letter-spacing: 1.5px;
   border-radius: var(--radius-soft);
   box-shadow: 0 4px 14px rgba(38, 54, 84, 0.08);
-  transition: all 0.4s var(--ease-premium);
+  transition:
+    transform 220ms var(--spring-soft),
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    box-shadow 220ms ease;
   cursor: pointer;
   border: 2px solid transparent;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -135,11 +144,16 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; }
   box-shadow: 0 7px 18px rgba(201, 170, 112, 0.2);
 }
 
+.btn:active {
+  transform: scale(0.97);
+  transition-duration: 90ms;
+}
+
 /* 5. PROGRESSIVE LOADING ANIMATION (The Anti-Vibe Secret) */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.9s var(--ease-premium), transform 0.9s var(--ease-premium);
+  transition: opacity 0.7s var(--ease-premium), transform 0.7s var(--spring-soft);
   will-change: opacity, transform;
 }
 
@@ -151,7 +165,7 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; }
 .reveal-children > * {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.6s var(--ease-premium), transform 0.6s var(--ease-premium);
+  transition: opacity 0.55s var(--ease-premium), transform 0.55s var(--spring-soft);
 }
 .reveal-children.is-visible > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
 .reveal-children.is-visible > *:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
@@ -187,13 +201,18 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; }
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    opacity 220ms var(--ease-premium),
+    visibility 220ms step-end;
 }
 
 .video-modal.active,
 .photo-lightbox.active {
   opacity: 1;
   visibility: visible;
+  transition:
+    opacity 220ms var(--ease-premium),
+    visibility 0ms step-start;
 }
 
 .modal-overlay,
@@ -223,8 +242,8 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; }
 .lightbox-next {
   position: absolute;
   top: 20px;
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 50%;
@@ -233,7 +252,9 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; }
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease;
+  transition:
+    transform 180ms var(--spring-soft),
+    background-color 180ms ease;
   z-index: 10;
 }
 
@@ -243,6 +264,14 @@ h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); font-weight: 600; }
 .lightbox-next:hover {
   background-color: rgba(255, 255, 255, 0.2);
   transform: scale(1.1);
+}
+
+.modal-close:active,
+.lightbox-close:active,
+.lightbox-prev:active,
+.lightbox-next:active {
+  transform: scale(0.96);
+  transition-duration: 90ms;
 }
 
 .modal-close {
@@ -300,12 +329,38 @@ a:focus {
    9. REDUCED MOTION
    ========================================= */
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+    will-change: auto !important;
+  }
+
   .reveal,
-  .video-modal,
-  .photo-lightbox,
-  button,
-  a {
-    transition: none;
+  .reveal-children > * {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  /* Disable scroll-based animations entirely */
+  .reveal.is-visible,
+  .reveal-children.is-visible > * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .modal-overlay,
+  .lightbox-overlay {
+    background-color: rgb(0, 0, 0);
   }
 }
 
