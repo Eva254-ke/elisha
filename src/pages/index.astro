@@ -8,6 +8,7 @@ import BookShowcase from '../components/BookShowcase.astro';
 import VideoGallery from '../components/VideoGallery.astro';
 import Ministry from '../components/Ministry.astro';
 import Support from '../components/Support.astro';
+import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -16,13 +17,14 @@ import Footer from '../components/Footer.astro';
   description="Official portfolio of Dr. Peter Muriithi Elisha. Author of 'Prodigal Son, Patient Father', University Educator, and leader at Good News Family Church."
 >
   <Header />
-  <main>
+  <main id="main-content">
     <Hero />
     <Pillars />
     <BookShowcase />
     <VideoGallery />
     <Ministry />
     <Support />
+    <Contact />
   </main>
   <Footer />
 </BaseLayout>

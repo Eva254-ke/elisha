@@ -86,21 +86,10 @@
     padding-inline: 1.5rem;
   }
 
-  /* Alternate content alignment for visual rhythm */
-  .pillar-item:nth-child(odd) .pillar-desc {
+  .pillar-desc,
+  .pillar-link {
     text-align: left;
-  }
-
-  .pillar-item:nth-child(even) .pillar-desc {
-    text-align: right;
-  }
-
-  .pillar-item:nth-child(odd) .pillar-link {
     justify-content: flex-start;
-  }
-
-  .pillar-item:nth-child(even) .pillar-link {
-    justify-content: flex-end;
   }
 }
 

@@ -48,6 +48,37 @@
   padding: 0 1.5rem;
 }
 
+.ministry-feature-grid {
+  display: grid;
+  gap: 2.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.ministry-feature-grid .ministry-content {
+  width: 100%;
+  padding: 0;
+}
+
+.ministry-location {
+  margin: -1.25rem 0 2rem;
+  color: var(--color-charcoal);
+}
+
+.ministry-flyer {
+  width: min(100%, 360px);
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: var(--radius-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.ministry-flyer img {
+  width: 100%;
+  height: auto;
+}
+
 .ministry-title {
   font-family: var(--font-serif);
   font-size: clamp(1.75rem, 3vw, 2.25rem);
@@ -209,6 +240,10 @@
   text-align: center;
 }
 
+.ministry-flyer--spm {
+  margin-top: 2rem;
+}
+
 .spm-title {
   font-family: var(--font-serif);
   font-size: clamp(1.75rem, 3vw, 2.25rem);
@@ -345,6 +380,10 @@
   .ministry-content {
     padding: 0 1rem;
   }
+
+  .ministry-feature-grid .ministry-content {
+    padding: 0;
+  }
   
   .rs-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -410,6 +449,18 @@
    7. DESKTOP OPTIMIZATIONS
    ========================================= */
 @media (min-width: 768px) {
+  .ministry-feature-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 360px);
+  }
+
+  .ministry-feature-grid--reverse .ministry-content {
+    order: 2;
+  }
+
+  .ministry-feature-grid--reverse .ministry-flyer {
+    order: 1;
+  }
+
   .ministries-list {
     grid-template-columns: repeat(3, 1fr);
   }

@@ -148,9 +148,15 @@
     justify-content: center;
     align-items: center;
     padding-inline: 0.5rem;
-    font-size: 0.65rem;
-    letter-spacing: 0.5px;
+    font-size: 0.75rem;
+    letter-spacing: 0.35px;
     line-height: 1.2;
+  }
+}
+
+@media (max-width: 420px) {
+  .book-actions {
+    grid-template-columns: 1fr;
   }
 }
 
