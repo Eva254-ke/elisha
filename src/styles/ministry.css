@@ -443,6 +443,12 @@
   .spm-section {
     padding: 2rem 1.25rem;
   }
+
+  .spm-notice {
+    margin-inline: -1.25rem;
+    padding-inline: 1.25rem;
+    border-radius: 0;
+  }
 }
 
 /* =========================================
