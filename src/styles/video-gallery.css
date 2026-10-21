@@ -53,6 +53,8 @@
   background-color: #ffffff;
   border-radius: var(--radius-soft);
   overflow: hidden;
+  display: flex;
+  height: 100%;
   transition: transform 0.4s var(--ease-premium), box-shadow 0.4s var(--ease-premium);
 }
 
@@ -63,6 +65,9 @@
 
 .video-wrapper {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .video-thumb {
@@ -143,6 +148,7 @@
 
 .video-info {
   padding: 1.25rem 1.5rem;
+  min-height: 106px;
 }
 
 .category-badge {
